@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5eadc">
+<title>KOMARU SHOP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="intro" class="intro">
+  <div class="intro-glow"></div>
+  <div class="intro-brand"><span class="logo-mark">K</span><span>KOMARU <b>SHOP</b></span></div>
+  <div class="intro-copy"><span class="kicker">ТВОЙ МАЛЕНЬКИЙ БИЗНЕС</span><h1>Магазин, где<br>живут <em>любимые</em><br>персонажи</h1><p>Открой двери, встречай гостей и развивай собственный магазин мерча.</p></div>
+  <div class="intro-mascots"><img class="intro-meow" src="assets/art/meowvl.png" alt="Мяовл"><img class="intro-komaru" src="assets/art/komaru.png" alt="Комару"></div>
+  <div class="intro-bottom"><span>МЯОВЛ × КОМАРУ</span><button id="enter-game">Открыть магазин <b>→</b></button></div>
+  <div class="intro-spark spark-a">✦</div><div class="intro-spark spark-b">✧</div>
+</div>
+
+<div id="game" class="game hidden">
+<header class="topbar">
+  <div class="brand"><span class="logo-mark">K</span><span><b>KOMARU SHOP</b><small>магазин Мяовл и Комару</small></span></div>
+  <div class="stats">
+    <div class="stat"><span class="stat-icon coin">₸</span><span><small>Баланс</small><b id="money">1000</b></span></div>
+    <div class="stat"><span class="stat-icon star">✦</span><span><small>Репутация</small><b id="rep">0</b></span></div>
+  </div>
+</header>
+<main class="layout">
+  <section class="scene-wrap">
+    <div class="scene-top"><span class="open-dot" id="status-dot"></span><span id="store-status">МАГАЗИН ЗАКРЫТ</span><span class="scene-clock" id="day-label">ДЕНЬ 1</span></div>
+    <section class="shop" aria-label="Интерьер магазина">
+      <div class="wall-lamp lamp-one"></div><div class="wall-lamp lamp-two"></div>
+      <div class="shop-sign"><span>✦</span><strong>KOMARU SHOP</strong><small>little things, big joy</small></div>
+      <div class="front-window"><div class="window-frame"></div><div class="plant"><i></i><i></i><i></i></div></div>
+      <div class="shelf shelf-a"><div class="shelf-label">ЗНАЧКИ • ПЕРВАЯ КОЛЛЕКЦИЯ</div><div class="goods">
+        <div class="merch"><div class="pin"><img src="assets/art/meowvl.png" alt="Мяовл"></div><small>МЯОВЛ</small></div>
+        <div class="merch"><div class="pin"><img src="assets/art/komaru.png" alt="Комару"></div><small>КОМАРУ</small></div>
+      </div></div>
+      <div class="shelf shelf-b"><div class="shelf-label">СКОРО В ПРОДАЖЕ</div><div class="coming"><span>Будущие коллекции появятся по мере развития магазина</span></div></div>
+      <div class="door" id="door"><div class="door-pane"></div><span>OPEN</span><i></i></div>
+      <div class="customer-zone" id="customers"></div>
+      <div class="counter"><div class="counter-top"></div><div class="counter-front">♡ KOMARU SHOP</div></div>
+      <div class="register"><div class="register-screen"></div><div class="register-base"></div></div>
+      <div class="seller"><div class="seller-hair"></div><div class="seller-face"><i></i><i></i><b></b></div><div class="seller-body"><span>✦</span></div></div>
+      <div class="floor"></div><div class="sparkle s1">✧</div><div class="sparkle s2">✦</div>
+    </section>
+    <div class="scene-caption"><span>Уютный магазинчик мерча</span><span>✦</span><span>Каждый день — новая история</span></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-heading"><div><span class="eyebrow">ТВОЙ МАГАЗИН</span><h1 id="panel-title">Подготовка</h1></div><span class="phase" id="phase">Закрыто</span></div>
+    <p class="message" id="message">Добро пожаловать! Пока магазин закрыт. Проверь первую коллекцию значков и нажми «Начать рабочий день», когда будешь готов.</p>
+
+    <div id="intro-panel" class="start-card">
+      <div class="start-art"><img src="assets/art/meowvl.png" alt=""><img src="assets/art/komaru.png" alt=""></div>
+      <b>Первая коллекция уже на полках</b>
+      <p>Пока в магазине продаются только значки. Остальные товары откроются позже.</p>
+      <button id="start-day" class="primary"><span>Начать рабочий день</span><b>→</b></button>
+    </div>
+
+    <div id="day-panel" class="hidden">
+      <div class="day-summary"><span>ГОСТИ СЕГОДНЯ</span><b id="visitors">0</b><span>ПРОДАЖИ</span><b id="sales">0</b></div>
+      <div id="dialog" class="dialog hidden">
+        <div class="customer-heading"><div class="mini-avatar" id="mini-avatar"></div><div><b id="customer-name"></b><small>посетитель магазина</small></div></div>
+        <p id="question"></p><div id="price-area"></div><div class="actions" id="actions"></div>
+      </div>
+      <div id="result" class="result hidden"></div>
+      <div id="roulette" class="roulette hidden"><div class="wheel-shell"><div class="wheel" id="wheel">✦</div></div><b id="roulette-result">Покупатель обдумывает предложение…</b></div>
+      <div class="stock-panel"><div class="section-title"><h2>Первая коллекция</h2><span>только значки</span></div><div class="stock-list">
+        <div class="stock-item"><img src="assets/art/meowvl.png"><span><b>Значок Мяовл</b><small id="stock-meow">5 шт. на складе</small></span><strong>100 ₸</strong></div>
+        <div class="stock-item"><img src="assets/art/komaru.png"><span><b>Значок Комару</b><small id="stock-komaru">5 шт. на складе</small></span><strong>100 ₸</strong></div>
+      </div></div>
+      <button id="next" class="primary"><span>Позвать покупателя</span><b>→</b></button>
+      <button id="close-day" class="secondary">Закончить рабочий день</button>
+    </div>
+    <div class="footer-note"><span>✦</span> Начни с малого — развивай магазин шаг за шагом.</div>
+  </section>
+</main>
+</div>
+<script src="js/game.js"></script>
+</body></html>
